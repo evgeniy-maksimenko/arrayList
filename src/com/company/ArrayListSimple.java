@@ -134,7 +134,7 @@ public class ArrayListSimple {
                 baseArray[i] = list[i-1];
             }
         }
-        list = new int[list.length+1];
+        list = new int[LENGTH+1];
         list = baseArray;
     }
 
@@ -151,7 +151,7 @@ public class ArrayListSimple {
                 baseArray[i] = list[i];
             }
         }
-        list = new int[list.length+1];
+        list = new int[LENGTH+1];
         list = baseArray;
     }
     
@@ -172,7 +172,7 @@ public class ArrayListSimple {
                 baseArray[i] = list[i-1];
             }
         }
-        list = new int[list.length+1];
+        list = new int[LENGTH+1];
         list = baseArray;
     }
     
@@ -187,7 +187,7 @@ public class ArrayListSimple {
             baseArray[i] = list[i+1];
             
         }
-        list = new int[list.length-1];
+        list = new int[LENGTH-1];
         list = baseArray;
         return delElement;
     }
@@ -203,7 +203,7 @@ public class ArrayListSimple {
             baseArray[i] = list[i];
 
         }
-        list = new int[list.length-1];
+        list = new int[LENGTH-1];
         list = baseArray;
         return delElement;
     }
@@ -221,7 +221,7 @@ public class ArrayListSimple {
             
             if(i >= index) baseArray[i] = list[i+1];
         }
-        list = new int[list.length-1];
+        list = new int[LENGTH-1];
         list = baseArray;
         return delElement;
     }
