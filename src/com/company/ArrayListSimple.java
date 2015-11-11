@@ -1,9 +1,14 @@
 package com.company;
 
-import java.util.ArrayList;
-
 public class ArrayListSimple {
     public int[] list = {};
+    
+    public void init(int[] in) {
+        list = new int[in.length];
+        for (int i = 0; i < in.length; i++) {
+            list[i] = in[i];
+        }
+    }
 
     private static void exception(int[] array) {
         if(array == null || array.length == 0)
@@ -119,7 +124,7 @@ public class ArrayListSimple {
     }
 
     public void clear() {
-        list = new int[1];
+        list = new int[0];
     }
     
     public void addPush(int element) {
@@ -134,7 +139,7 @@ public class ArrayListSimple {
                 baseArray[i] = list[i-1];
             }
         }
-        list = new int[LENGTH+1];
+
         list = baseArray;
     }
 
@@ -151,7 +156,7 @@ public class ArrayListSimple {
                 baseArray[i] = list[i];
             }
         }
-        list = new int[LENGTH+1];
+
         list = baseArray;
     }
     
@@ -172,22 +177,19 @@ public class ArrayListSimple {
                 baseArray[i] = list[i-1];
             }
         }
-        list = new int[LENGTH+1];
+
         list = baseArray;
     }
     
     public int delStart() {
         exception(list);
-        int delElement = 0;
+        int delElement = list[0];
         int LENGTH = list.length;
         int[] baseArray = new int[LENGTH - 1];
 
-        for (int i = 0; i < baseArray.length; i++) {
-            if(i==0) delElement = list[0];
+        for (int i = 0; i < baseArray.length; i++)
             baseArray[i] = list[i+1];
-            
-        }
-        list = new int[LENGTH-1];
+
         list = baseArray;
         return delElement;
     }
@@ -203,25 +205,22 @@ public class ArrayListSimple {
             baseArray[i] = list[i];
 
         }
-        list = new int[LENGTH-1];
+
         list = baseArray;
         return delElement;
     }
 
     public int delIndex(int index) {
         exception(list);
-        int delElement = 0;
+        int delElement = list[index];
         int LENGTH = list.length;
         int[] baseArray = new int[LENGTH - 1];
 
         for (int i = 0; i < baseArray.length; i++) {
             if(i < index) baseArray[i] = list[i];
             
-            if(i == index) delElement = list[index];
-            
             if(i >= index) baseArray[i] = list[i+1];
         }
-        list = new int[LENGTH-1];
         list = baseArray;
         return delElement;
     }
