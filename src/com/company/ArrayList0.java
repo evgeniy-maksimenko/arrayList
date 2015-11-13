@@ -14,7 +14,7 @@ public class ArrayList0 {
         }
     }
 
-    private static void exception(int[] array) {
+    private void exception(int[] array) {
         if(array == null || array.length == 0)
             throw new IllegalArgumentException();
     }
