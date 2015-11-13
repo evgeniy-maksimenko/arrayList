@@ -1,7 +1,11 @@
 package com.company;
 
-public class ArrayListSimple {
+public class ArrayList0 {
     public int[] list = {};
+    
+    public int[] getList() {
+        return list;
+    }
     
     public void init(int[] in) {
         list = new int[in.length];
@@ -17,6 +21,7 @@ public class ArrayListSimple {
 
     public int min() {
         exception(list);
+
         int result = list[0];
         for (int i = 0; i < list.length; i++) {
             if(list[i] < result ) {
@@ -78,6 +83,7 @@ public class ArrayListSimple {
 
     public void print() {
         exception(list);
+
         for(int j=0;j<list.length;j++)
             System.out.print(list[j] + " ");
         System.out.println("");
@@ -104,13 +110,8 @@ public class ArrayListSimple {
         }
     }
     
-    public int size(int itr) {
-        exception(list);
-        if(itr < list.length) {
-            return size(itr+1);
-        } else {
-            return itr;
-        }
+    public int size() {
+        return list.length;
     }
     
     public void set(int index, int element) {
@@ -126,6 +127,7 @@ public class ArrayListSimple {
     public void clear() {
         list = new int[0];
     }
+    
     
     public void addPush(int element) {
         exception(list);
@@ -196,12 +198,11 @@ public class ArrayListSimple {
 
     public int delEnd() {
         exception(list);
-        int delElement = 0;
         int LENGTH = list.length;
+        int delElement = list[LENGTH-1];
         int[] baseArray = new int[LENGTH - 1];
 
         for (int i = 0; i < baseArray.length; i++) {
-            if(i==0) delElement = list[LENGTH-1];
             baseArray[i] = list[i];
 
         }

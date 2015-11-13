@@ -5,8 +5,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ArrayListSimple arrayListSimple = new ArrayListSimple();
-        arrayListSimple.init(new int[]{120, 340, 292, 33, 24});
+        ArrayList0 arrayList0 = new ArrayList0();
+        arrayList0.init(new int[]{120, 340, 292, 33, 24});
+        arrayList0.print();
 //        arrayListSimple.min();
 //        arrayListSimple.max();
 //        arrayListSimple.minInd();
@@ -15,10 +16,10 @@ public class Main {
 //        arrayListSimple.reverse();
 //
 //        arrayListSimple.halfReverse();
-//        arrayListSimple.size(0);
+//        arrayListSimple.size();
 //        arrayListSimple.set(1, 100);
 //        arrayListSimple.get(2);
-        arrayListSimple.clear();
+//        arrayList0.clear();
 
 //
 ////        arrayListSimple.print();
