@@ -1,24 +1,39 @@
 package com.company;
 
-public class ArrayList0 {
+public class ArrayList0 implements ArrayList0Inter{
     public int[] list = {};
     
     public int[] getList() {
         return list;
     }
-    
+
+    @Override
     public void init(int[] in) {
+        if(in == null) {
+            in = new int[0];
+        }
         list = new int[in.length];
         for (int i = 0; i < in.length; i++) {
             list[i] = in[i];
         }
     }
 
+    @Override
+    public int[] toArray() {
+        int[] in = new int[size()];
+        for (int i = 0; i < size(); i++) {
+            in[i] = list[i];
+        }
+        return in;
+    }
+
+    
     private void exception(int[] array) {
         if(array == null || array.length == 0)
             throw new IllegalArgumentException();
     }
 
+    @Override
     public int min() {
         exception(list);
 
@@ -32,6 +47,7 @@ public class ArrayList0 {
             
     }
 
+    @Override
     public int max() {
         exception(list);
         int result = list[0];
@@ -43,6 +59,7 @@ public class ArrayList0 {
         return result;
     }
 
+    @Override
     public int minInd() {
         exception(list);
         int result = list[0];
@@ -55,6 +72,7 @@ public class ArrayList0 {
         return index;
     }
 
+    @Override
     public int maxInd() {
         exception(list);
         int result = list[0];
@@ -67,6 +85,7 @@ public class ArrayList0 {
         return index;
     }
 
+    @Override
     public void sort() {
         exception(list);
         int out, in;
@@ -80,7 +99,8 @@ public class ArrayList0 {
             }
         }
     }
-
+    
+    @Override
     public void print() {
         exception(list);
 
@@ -89,6 +109,7 @@ public class ArrayList0 {
         System.out.println("");
     }
 
+    @Override
     public void reverse() {
         exception(list);
 
@@ -98,7 +119,8 @@ public class ArrayList0 {
             list[list.length - i - 1] = tmp;
         }
     }
-
+    
+    @Override
     public void halfReverse() {
         exception(list);
         int halfArray = list.length / 2;
@@ -110,25 +132,29 @@ public class ArrayList0 {
         }
     }
     
+    @Override
     public int size() {
         return list.length;
     }
-    
+
+    @Override
     public void set(int index, int element) {
         exception(list);
         list[index] = element;
     }
 
+    @Override
     public int get(int index) {
         exception(list);
         return list[index];
     }
 
+    @Override
     public void clear() {
         list = new int[0];
     }
-    
-    
+
+    @Override
     public void addPush(int element) {
         exception(list);
         int LENGTH = list.length;
@@ -145,6 +171,7 @@ public class ArrayList0 {
         list = baseArray;
     }
 
+    @Override
     public void addPop(int element) {
         exception(list);
         int LENGTH = list.length;
@@ -161,7 +188,8 @@ public class ArrayList0 {
 
         list = baseArray;
     }
-    
+
+    @Override
     public void add(int index, int element) {
         exception(list);
         int LENGTH = list.length;
@@ -182,7 +210,8 @@ public class ArrayList0 {
 
         list = baseArray;
     }
-    
+
+    @Override
     public int delStart() {
         exception(list);
         int delElement = list[0];
@@ -196,6 +225,7 @@ public class ArrayList0 {
         return delElement;
     }
 
+    @Override
     public int delEnd() {
         exception(list);
         int LENGTH = list.length;
@@ -211,6 +241,7 @@ public class ArrayList0 {
         return delElement;
     }
 
+    @Override
     public int delIndex(int index) {
         exception(list);
         int delElement = list[index];

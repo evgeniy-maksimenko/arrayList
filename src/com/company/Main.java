@@ -1,13 +1,16 @@
 package com.company;
 
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
 
         ArrayList0 arrayList0 = new ArrayList0();
         arrayList0.init(new int[]{120, 340, 292, 33, 24});
-        arrayList0.print();
+//        arrayList0.print();
+        System.out.println(Arrays.toString(arrayList0.toArray()));
 //        arrayListSimple.min();
 //        arrayListSimple.max();
 //        arrayListSimple.minInd();

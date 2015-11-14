@@ -5,11 +5,17 @@ import static org.junit.Assert.*;
 
 public class ArrayList0Test {
     
-    @Test (expected = NullPointerException.class)
+    @Test (expected = IllegalArgumentException.class)
     public void testMinExc() {
         ArrayList0 arrayList0 = new ArrayList0();
         arrayList0.init(null);
         assertEquals(24, arrayList0.min());
+    }
+
+    @Test
+    public void testInit() {
+        ArrayList0 arrayList0 = new ArrayList0();
+        arrayList0.init(new int[0]);
     }
 
     @Test
@@ -99,7 +105,7 @@ public class ArrayList0Test {
         ArrayList0 arrayList0 = new ArrayList0();
         arrayList0.init(new int[]{120, 340, 292, 33, 24});
         arrayList0.clear();
-        assertEquals(0, arrayList0.size());
+        assertEquals("Empty list should have 0 elements", 0, arrayList0.size());
     }
 
     @Test
@@ -110,6 +116,7 @@ public class ArrayList0Test {
         assertEquals(5, arrayList0.size());
         arrayList0.addPush(200);
         assertEquals(6, arrayList0.size());
+        assertEquals(200, arrayList0.get(0));
         int[] actual = arrayList0.getList();
         assertArrayEquals(expected, actual);
     }
